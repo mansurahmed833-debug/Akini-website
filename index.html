@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#062b52">
-<title>AKINI | Pets, Home & Lifestyle</title>
+<title>AKINI | Pets, Home & Lifestyle</title>\n<meta name="description" content="Discover products for pets, home and lifestyle with AKINI. Compare ideas and visit independent retailers to shop.">\n<meta name="robots" content="index,follow">
 <style>
 :root{--navy:#062b52;--orange:#ff7900;--blue:#1264b5;--ink:#09264a;--muted:#64748b;--line:#e7ebf0;--soft:#f3f4f7}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:Arial,Helvetica,sans-serif;background:#fff}a{color:inherit;text-decoration:none}button,input,select{font:inherit}
@@ -20,7 +20,7 @@
 </style>
 </head>
 <body>
-<div class="topbar"><div class="top-left"><span>🚚 Free Shipping over €49</span><span>🛡 Secure Payments</span><span>🎧 Fast Support</span></div><div>🇮🇹 Italy　<select id="lang"><option value="en">English</option><option value="it">Italiano</option></select></div></div>
+<div class="topbar"><div class="top-left"><span>🚚 Retailer shipping terms apply</span><span>🛡 Checkout on retailer sites</span><span>🎧 Contact AKINI</span></div><div>🇮🇹 Italy　<select id="lang"><option value="en">English</option><option value="it">Italiano</option></select></div></div>
 <header class="header"><a class="brand" href="#"><div class="symbol">A</div><div><div class="brandname">AKINI</div><div class="tagline">I buy. I choose. I love.</div></div></a>
 <form class="search" id="searchForm"><input id="searchInput" placeholder="Search for pets, home & lifestyle products..." aria-label="Search products"><button aria-label="Search">⌕</button></form>
 <div class="header-actions"><button type="button" onclick="showMessage('Account feature will be added after launch.')"><b>♙</b>Account</button><button type="button" onclick="showWishlist()"><b>♡</b>Wishlist</button><button type="button" onclick="openCart()"><b>🛒</b>Cart (<span id="cartCount">0</span>)</button></div></header>
@@ -37,12 +37,16 @@
 <article class="product" data-category="Home" data-name="modern living room decor"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Living room"></div><div class="product-info"><h3>Modern Home Decor</h3><div class="stars">★★★★★ <small>(demo)</small></div><div class="price">€29.90</div><div class="product-actions"><a class="visit" href="#affiliate-note">View retailer ↗</a><button class="save" aria-label="Save product">♡</button></div></div></article>
 <article class="product" data-category="Lifestyle" data-name="everyday backpack"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80" alt="Backpack"></div><div class="product-info"><h3>Everyday Carry Bag</h3><div class="stars">★★★★★ <small>(demo)</small></div><div class="price">€24.90</div><div class="product-actions"><a class="visit" href="#affiliate-note">View retailer ↗</a><button class="save" aria-label="Save product">♡</button></div></div></article>
 </div><p class="empty" id="empty">No matching products found. Try another search.</p></section>
-<section class="benefits"><div><b>🚚</b>Free Shipping<small>Retailer terms apply</small></div><div><b>🛡</b>Secure Shopping<small>Partner store checkout</small></div><div><b>🎧</b>Helpful Support<small>Contact AKINI</small></div><div><b>↻</b>Easy Returns<small>Retailer policies apply</small></div></section>
+<section class="benefits"><div><b>🚚</b>Shipping<small>Retailer terms apply</small></div><div><b>🛡</b>Retailer Checkout<small>Payments handled by retailer</small></div><div><b>🎧</b>Contact AKINI<small>Questions and feedback</small></div><div><b>↻</b>Returns<small>Retailer policies apply</small></div></section>
 <p class="disclosure" id="affiliate-note"><strong>Affiliate disclosure:</strong> AKINI may earn a commission when you follow an affiliate link and make a qualifying purchase, at no additional cost to you. This is a development demo: product names, prices, ratings, discounts and links are illustrative and must be replaced with verified retailer information and approved affiliate links before publication.</p>
 <dialog id="cartDialog" style="border:0;border-radius:16px;padding:22px;width:min(92%,440px);box-shadow:0 12px 45px #0004;color:var(--ink)">
 <h2>Your AKINI Cart</h2><div id="cartItems"></div><p id="cartTotal" style="font-weight:800"></p>
 <p style="font-size:12px;color:var(--muted)">This is only a product shortlist. AKINI does not take payment or place orders. Purchases happen on retailer websites.</p>
 <button type="button" onclick="closeCart()" style="background:var(--navy);color:white;border:0;border-radius:22px;padding:10px 18px">Continue shopping</button>
+</dialog>
+<dialog id="wishlistDialog" style="border:0;border-radius:16px;padding:22px;width:min(92%,440px);box-shadow:0 12px 45px #0004;color:var(--ink)">
+<h2>Your AKINI Wishlist</h2><div id="wishlistItems"></div>
+<button type="button" onclick="closeWishlist()" style="background:var(--navy);color:white;border:0;border-radius:22px;padding:10px 18px">Close</button>
 </dialog>
 <footer class="footer" id="footer"><div id="about"><strong style="font-size:25px">AKINI</strong><br>I buy. I choose. I love.<br><small>Pets · Home · Lifestyle</small></div><div><strong>Explore</strong><br><small><a href="about.html" style="color:#fff">About</a> · <a href="contact.html" style="color:#fff">Contact</a> · <a href="affiliate-disclosure.html" style="color:#fff">Affiliate Disclosure</a></small></div><div><strong>Information</strong><br><small><a href="privacy-policy.html" style="color:#fff">Privacy Policy</a><br><a href="cookie-policy.html" style="color:#fff">Cookie Policy</a><br><a href="terms.html" style="color:#fff">Terms &amp; Conditions</a></small></div><div><small>© 2026 AKINI — Development preview</small></div></footer>
 <script>
@@ -50,43 +54,62 @@ const cards = [...document.querySelectorAll('.product')];
 const filterButtons = [...document.querySelectorAll('[data-filter]')];
 const searchInput = document.getElementById('searchInput');
 const empty = document.getElementById('empty');
+const cartDialog = document.getElementById('cartDialog');
+const wishlistDialog = document.getElementById('wishlistDialog');
+const cartItems = document.getElementById('cartItems');
+const cartTotal = document.getElementById('cartTotal');
+const wishlistItems = document.getElementById('wishlistItems');
 let active = 'All';
-let cart = JSON.parse(localStorage.getItem('akiniCart') || '[]');
 
+function readStore(key, fallback) {
+  try {
+    const value = JSON.parse(localStorage.getItem(key));
+    return Array.isArray(value) ? value : fallback;
+  } catch (_) { return fallback; }
+}
+let cart = readStore('akiniCart', []).filter(item =>
+  item && typeof item.name === 'string' && Number.isInteger(item.qty) && item.qty > 0
+);
+let wishlist = readStore('akiniWishlist', []).filter(name => typeof name === 'string');
+
+function saveStore(key, value) {
+  try { localStorage.setItem(key, JSON.stringify(value)); }
+  catch (_) { showMessage('Your browser could not save this list. Check your storage settings.'); }
+}
 function updateCartCount() {
   document.getElementById('cartCount').textContent = cart.reduce((n, item) => n + item.qty, 0);
-  localStorage.setItem('akiniCart', JSON.stringify(cart));
+  saveStore('akiniCart', cart);
 }
 function updateProducts() {
   const q = searchInput.value.trim().toLowerCase();
   let count = 0;
   cards.forEach(card => {
-    const show = (active === 'All' || card.dataset.category === active) && card.dataset.name.includes(q);
+    const show = (active === 'All' || card.dataset.category === active) &&
+      (card.dataset.name || '').toLowerCase().includes(q);
     card.hidden = !show;
     if (show) count++;
   });
   empty.style.display = count ? 'none' : 'block';
 }
-filterButtons.forEach(btn => btn.addEventListener('click', () => {
-  active = btn.dataset.filter;
-  filterButtons.forEach(b => b.classList.toggle('active', b === btn));
-  updateProducts();
-}));
-document.querySelectorAll('.category[data-category]').forEach(link => link.addEventListener('click', () => {
-  active = link.dataset.category;
+function setFilter(value) {
+  active = value;
   filterButtons.forEach(b => b.classList.toggle('active', b.dataset.filter === active));
   updateProducts();
-}));
+}
+filterButtons.forEach(btn => btn.addEventListener('click', () => setFilter(btn.dataset.filter)));
+document.querySelectorAll('.category[data-category]').forEach(link =>
+  link.addEventListener('click', () => setFilter(link.dataset.category))
+);
 document.getElementById('searchForm').addEventListener('submit', e => {
   e.preventDefault(); updateProducts(); document.getElementById('products').scrollIntoView();
 });
 searchInput.addEventListener('input', updateProducts);
 
 cards.forEach(card => {
+  const name = card.querySelector('h3').textContent.trim();
   const button = document.createElement('button');
   button.type = 'button'; button.className = 'add-cart'; button.textContent = '+ Add to Cart';
   button.addEventListener('click', () => {
-    const name = card.querySelector('h3').textContent;
     const found = cart.find(item => item.name === name);
     if (found) found.qty++;
     else cart.push({name, qty: 1});
@@ -94,28 +117,59 @@ cards.forEach(card => {
     setTimeout(() => button.textContent = '+ Add to Cart', 1000);
   });
   card.querySelector('.product-actions').prepend(button);
+  const saveButton = card.querySelector('.save');
+  saveButton.addEventListener('click', () => {
+    if (wishlist.includes(name)) wishlist = wishlist.filter(item => item !== name);
+    else wishlist.push(name);
+    saveStore('akiniWishlist', wishlist);
+    updateWishlistButtons();
+  });
 });
-
-document.querySelectorAll('.save').forEach(btn => btn.addEventListener('click', () => {
-  btn.classList.toggle('saved');
-  btn.textContent = btn.classList.contains('saved') ? '♥' : '♡';
-}));
+function updateWishlistButtons() {
+  cards.forEach(card => {
+    const name = card.querySelector('h3').textContent.trim();
+    const button = card.querySelector('.save');
+    const saved = wishlist.includes(name);
+    button.classList.toggle('saved', saved);
+    button.textContent = saved ? '♥' : '♡';
+    button.setAttribute('aria-pressed', String(saved));
+  });
+}
 function showWishlist() {
-  const saved = [...document.querySelectorAll('.save.saved')].map(btn => btn.closest('.product').querySelector('h3').textContent);
-  alert(saved.length ? 'Your AKINI Wishlist:\\n\\n' + saved.join('\\n') : 'Your wishlist is empty. Tap a heart to save a product.');
+  wishlistItems.replaceChildren();
+  if (!wishlist.length) {
+    const p = document.createElement('p'); p.textContent = 'Your wishlist is empty. Tap a heart to save a product.';
+    wishlistItems.append(p);
+  } else {
+    wishlist.forEach(name => {
+      const p = document.createElement('p'); p.textContent = '♥ ' + name; wishlistItems.append(p);
+    });
+  }
+  if (wishlistDialog.showModal) wishlistDialog.showModal();
+  else alert(wishlistItems.textContent);
 }
 function openCart() {
-  const dialog = document.getElementById('cartDialog');
-  const items = document.getElementById('cartItems');
-  const total = document.getElementById('cartTotal');
+  cartItems.replaceChildren();
   if (!cart.length) {
-    items.textContent = 'Your cart is empty.'; total.textContent = '';
+    cartItems.textContent = 'Your cart is empty.'; cartTotal.textContent = '';
   } else {
-    items.innerHTML = cart.map((item, i) => `<p>${i+1}. ${item.name} — Qty: ${item.qty} <button onclick="changeQty(${i},-1)">−</button> <button onclick="changeQty(${i},1)">+</button></p>`).join('');
-    total.textContent = 'Total products: ' + cart.reduce((n, item) => n + item.qty, 0);
+    cart.forEach((item, index) => {
+      const row = document.createElement('p');
+      const label = document.createElement('span');
+      label.textContent = (index + 1) + '. ' + item.name + ' — Qty: ' + item.qty + ' ';
+      const minus = document.createElement('button');
+      minus.type = 'button'; minus.textContent = '−'; minus.setAttribute('aria-label', 'Decrease ' + item.name);
+      minus.addEventListener('click', () => changeQty(index, -1));
+      const plus = document.createElement('button');
+      plus.type = 'button'; plus.textContent = '+'; plus.setAttribute('aria-label', 'Increase ' + item.name);
+      plus.addEventListener('click', () => changeQty(index, 1));
+      row.append(label, minus, document.createTextNode(' '), plus);
+      cartItems.append(row);
+    });
+    cartTotal.textContent = 'Total products: ' + cart.reduce((n, item) => n + item.qty, 0);
   }
-  if (dialog.showModal) dialog.showModal();
-  else alert(items.textContent);
+  if (cartDialog.showModal) cartDialog.showModal();
+  else alert(cartItems.textContent);
 }
 function changeQty(index, amount) {
   if (!cart[index]) return;
@@ -123,11 +177,17 @@ function changeQty(index, amount) {
   if (cart[index].qty <= 0) cart.splice(index, 1);
   updateCartCount(); openCart();
 }
-function closeCart() { document.getElementById('cartDialog').close(); }
+function closeCart() { cartDialog.close(); }
+function closeWishlist() { wishlistDialog.close(); }
 function showMessage(message) { alert(message); }
 document.getElementById('lang').addEventListener('change', e => {
-  if (e.target.value === 'it') alert('La traduzione italiana completa sarà aggiunta prima della pubblicazione.');
+  if (e.target.value === 'it') {
+    showMessage('La traduzione italiana completa non è ancora disponibile. La aggiungeremo dopo il collaudo delle funzioni.');
+    e.target.value = 'en';
+  }
 });
 updateCartCount();
+updateWishlistButtons();
+updateProducts();
 </script>
 </body></html>
