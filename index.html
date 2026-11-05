@@ -157,7 +157,25 @@ function showWishlist() {
     wishlistItems.append(p);
   } else {
     wishlist.forEach(name => {
-      const p = document.createElement('p'); p.textContent = '♥ ' + name; wishlistItems.append(p);
+      const card = cards.find(item => item.querySelector('h3').textContent.trim() === name);
+      const row = document.createElement('div');
+      row.style.cssText = 'display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #e5e7eb';
+      if (card) {
+        const sourceImage = card.querySelector('.product-image img');
+        if (sourceImage) {
+          const img = document.createElement('img');
+          img.src = sourceImage.currentSrc || sourceImage.src;
+          img.alt = sourceImage.alt || name;
+          img.loading = 'lazy';
+          img.style.cssText = 'width:76px;height:76px;object-fit:cover;border-radius:10px;flex:0 0 76px';
+          row.append(img);
+        }
+      }
+      const label = document.createElement('span');
+      label.textContent = '♥ ' + name;
+      label.style.cssText = 'font-weight:600;overflow-wrap:anywhere';
+      row.append(label);
+      wishlistItems.append(row);
     });
   }
   if (wishlistDialog.showModal) wishlistDialog.showModal();
