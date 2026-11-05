@@ -1,14 +1,26 @@
-# AKINI Website
+# AKINI Affiliate Website
 
-Non-commercial product-discovery preview for Pets, Home and Lifestyle.
+Bilingual (English/Italian) product-discovery preview for Pets, Home and Lifestyle.
+
+## Current operating model
+
+- Affiliate-only model: AKINI does not manufacture, stock, sell or ship products.
+- No customer checkout, order collection or payment processing.
+- No active affiliate links, affiliate tracking or commission earnings yet.
+- Product cards, prices and ratings are illustrative placeholders, not verified offers.
+- Cart shortlist and wishlist are saved locally in the visitor's browser.
+- Optional HubSpot contact form is a separate third-party service.
 
 ## Publishing
 
-This site is published with GitHub Pages from the repository's `main` branch.
+Published with GitHub Pages from the `main` branch.
 
-## Current status
+## Before affiliate launch
 
-- English and Italian pages are available.
-- Product cards are illustrative previews, not offers for sale.
-- No checkout, payments, active affiliate links or commission tracking are provided.
-- HubSpot contact form remains an optional third-party form and is managed separately.
+1. Apply to relevant affiliate programmes and obtain approval.
+2. Replace every demo product, price, rating and image with accurate, authorized product information.
+3. Add only approved affiliate URLs and clearly disclose commissions beside relevant links.
+4. Review privacy, cookie/consent and Italian/EU tax/business obligations with qualified professionals.
+5. Verify the live site on mobile and desktop after each release.
+
+This repository does not establish that AKINI is a registered business or that any affiliate programme has approved it.
