@@ -74,10 +74,11 @@ function readStore(key, fallback) {
     return Array.isArray(value) ? value : fallback;
   } catch (_) { return fallback; }
 }
+const legacyProductIds = {"Comfort Pet Bed":"pet-bed","Cuccia confortevole per animali":"pet-bed","Retractable Dog Leash":"dog-leash","Guinzaglio retrattile per cani":"dog-leash","Stainless Steel Bowl":"pet-bowl","Ciotola in acciaio inox":"pet-bowl","Durable Dog Toy":"dog-toy","Gioco resistente per cani":"dog-toy","Cat Tree House":"cat-tree","Tiragraffi per gatti":"cat-tree","Modern Home Decor":"home-decor","Arredo moderno per la casa":"home-decor","Everyday Carry Bag":"backpack","Borsa per tutti i giorni":"backpack"};
 let cart = readStore('akiniCart', []).filter(item =>
   item && typeof item.name === 'string' && Number.isInteger(item.qty) && item.qty > 0
-);
-let wishlist = readStore('akiniWishlist', []).filter(name => typeof name === 'string');
+).map(item => ({...item, id: item.id || legacyProductIds[item.name] || item.name}));
+let wishlist = readStore('akiniWishlist', []).filter(name => typeof name === 'string').map(name => legacyProductIds[name] || name);
 
 function saveStore(key, value) {
   try { localStorage.setItem(key, JSON.stringify(value)); }
@@ -128,17 +129,19 @@ cards.forEach(card => {
   const button = document.createElement('button');
   button.type = 'button'; button.className = 'add-cart'; button.textContent = '+ Aggiungi al carrello';
   button.addEventListener('click', () => {
-    const found = cart.find(item => item.name === name);
+    const id = card.dataset.productId || name;
+    const found = cart.find(item => item.id === id || item.name === name);
     if (found) found.qty++;
-    else cart.push({name, qty: 1});
+    else cart.push({id, name, qty: 1});
     updateCartCount(); button.textContent = '✓ Aggiunto';
     setTimeout(() => button.textContent = '+ Aggiungi al carrello', 1000);
   });
   card.querySelector('.product-actions').prepend(button);
   const saveButton = card.querySelector('.save');
   saveButton.addEventListener('click', () => {
-    if (wishlist.includes(name)) wishlist = wishlist.filter(item => item !== name);
-    else wishlist.push(name);
+    const id = card.dataset.productId || name;
+    if (wishlist.includes(id) || wishlist.includes(name)) wishlist = wishlist.filter(item => item !== id && item !== name);
+    else wishlist.push(id);
     saveStore('akiniWishlist', wishlist);
     updateWishlistButtons();
   });
@@ -147,7 +150,7 @@ function updateWishlistButtons() {
   cards.forEach(card => {
     const name = card.querySelector('h3').textContent.trim();
     const button = card.querySelector('.save');
-    const saved = wishlist.includes(name);
+    const saved = wishlist.includes(card.dataset.productId || name) || wishlist.includes(name);
     button.classList.toggle('saved', saved);
     button.textContent = saved ? '♥' : '♡';
     button.setAttribute('aria-pressed', String(saved));
@@ -161,7 +164,7 @@ function showWishlist() {
     wishlistItems.append(p);
   } else {
     wishlist.forEach(name => {
-      const card = cards.find(item => item.querySelector('h3').textContent.trim() === name);
+      const card = cards.find(item => item.dataset.productId === name || item.querySelector('h3').textContent.trim() === name);
       const row = document.createElement('div');
       row.style.cssText = 'display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #e5e7eb';
       if (card) {
@@ -176,7 +179,7 @@ function showWishlist() {
         }
       }
       const label = document.createElement('span');
-      label.textContent = '♥ ' + name;
+      label.textContent = '♥ ' + (card ? card.querySelector('h3').textContent.trim() : name);
       label.style.cssText = 'font-weight:600;overflow-wrap:anywhere';
       row.append(label);
       wishlistItems.append(row);
@@ -193,7 +196,7 @@ function openCart() {
     cart.forEach((item, index) => {
       const row = document.createElement('div');
       row.style.cssText = 'display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #e5e7eb';
-      const card = cards.find(product => product.querySelector('h3').textContent.trim() === item.name);
+      const card = cards.find(product => product.dataset.productId === item.id || product.querySelector('h3').textContent.trim() === item.name);
       if (card) {
         const sourceImage = card.querySelector('.product-image img');
         if (sourceImage) {
@@ -208,7 +211,7 @@ function openCart() {
       const details = document.createElement('div');
       details.style.cssText = 'display:flex;flex:1;min-width:0;flex-direction:column;gap:8px';
       const label = document.createElement('strong');
-      label.textContent = item.name;
+      label.textContent = card ? card.querySelector('h3').textContent.trim() : item.name;
       label.style.cssText = 'overflow-wrap:anywhere';
       const controls = document.createElement('div');
       controls.style.cssText = 'display:flex;align-items:center;gap:10px';
