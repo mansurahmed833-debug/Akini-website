@@ -23,39 +23,39 @@
 </style>
 </head>
 <body>
-<div class="topbar"><div class="top-left"><span>🚚 Si applicano le condizioni di spedizione del rivenditore</span><span>🛡 Pagamento sul sito del rivenditore</span><span>🎧 Contatta AKINI</span></div><div>🇮🇹 Italy　<select id="lang" aria-label="Scegli la lingua del sito"><option value="en">English</option><option value="it" selected>Italiano</option></select></div></div>
-<header class="header"><a class="brand" href="#"><div class="symbol">A</div><div><div class="brandname">AKINI</div><div class="tagline">I buy. I choose. I love.</div></div></a>
-<form class="search" id="searchForm"><input id="searchInput" placeholder="Cerca prodotti per animali, casa e lifestyle..." aria-label="Search products"><button aria-label="Search">⌕</button></form>
-<div class="header-actions"><button type="button" onclick="showPreferiti()"><b>♡</b>Preferiti</button><button type="button" onclick="openCarrello()"><b>🛒</b>Carrello (<span id="cartCount">0</span>)</button></div></header>
+<div class="topbar"><div class="top-left"><span>🚚 Si applicano le condizioni di spedizione del rivenditore</span><span>🛡 Pagamento sul sito del rivenditore</span><span>🎧 Contatta AKINI</span></div><div>🇮🇹 Italia　<select id="lang" aria-label="Scegli la lingua del sito"><option value="en">English</option><option value="it" selected>Italiano</option></select></div></div>
+<header class="header"><a class="brand" href="#"><div class="symbol">A</div><div><div class="brandname">AKINI</div><div class="tagline">Compro. Scelgo. Amo.</div></div></a>
+<form class="search" id="searchForm"><input id="searchInput" placeholder="Cerca prodotti per animali, casa e lifestyle..." aria-label="Cerca prodotti"><button aria-label="Cerca">⌕</button></form>
+<div class="header-actions"><button type="button" onclick="showWishlist()"><b>♡</b>Preferiti</button><button type="button" onclick="openCart()"><b>🛒</b>Carrello (<span id="cartCount">0</span>)</button></div></header>
 <button class="mobile-menu-toggle" type="button" aria-controls="siteNav" aria-expanded="false" onclick="toggleMobileMenu(this)">☰ Menu</button>
-<nav class="nav" id="siteNav" aria-label="Main navigation"><a href="#">⌂ Casa</a><a href="#products" data-category="Animali">🐾 Animali⌄</a><a href="#products" data-category="Casa">⌂ Casa⌄</a><a href="#products" data-category="Lifestyle">✿ Lifestyle⌄</a><a href="#products">◆ Deals</a><a href="about-it.html">ⓘ Chi siamo</a><a href="#footer">✉ Contact</a></nav>
-<section class="hero"><div class="hero-copy"><div class="hero-logo">A<span>KINI</span></div><div class="tagline">I buy. I choose. I love.</div><h1>Tutto per i tuoi<br><em>Animali, Casa</em> e Lifestyle!</h1><a class="cta" href="#products">Scopri i prodotti →</a></div><aside class="hero-aside"><strong>Animali felici,<br>tu più felice!</strong><p><span>✔</span> Scopri prodotti utili<br><span>✔</span> Confronta le offerte<br><span>✔</span> Acquista direttamente dai rivenditori</p></aside></section>
+<nav class="nav" id="siteNav" aria-label="Navigazione principale"><a href="#">⌂ Casa</a><a href="#products" data-category="Animali">🐾 Animali⌄</a><a href="#products" data-category="Casa">⌂ Casa⌄</a><a href="#products" data-category="Lifestyle">✿ Lifestyle⌄</a><a href="#products">◆ Offerte</a><a href="about-it.html">ⓘ Chi siamo</a><a href="#footer">✉ Contatti</a></nav>
+<section class="hero"><div class="hero-copy"><div class="hero-logo">A<span>KINI</span></div><div class="tagline">Compro. Scelgo. Amo.</div><h1>Tutto per i tuoi<br><em>Animali, Casa</em> e Lifestyle!</h1><a class="cta" href="#products">Scopri i prodotti →</a></div><aside class="hero-aside"><strong>Animali felici,<br>tu più felice!</strong><p><span>✔</span> Scopri prodotti utili<br><span>✔</span> Confronta le offerte<br><span>✔</span> Acquista direttamente dai rivenditori</p></aside></section>
 <section class="categories" id="categories"><a class="category" href="#products" data-category="Animali"><span class="ico">🐾</span><span>Animali<small>Cibo, giochi, accessori</small></span>›</a><a class="category" href="#products" data-category="Casa"><span class="ico">⌂</span><span>Casa<small>Arredo, cucina, casa</small></span>›</a><a class="category" href="#products" data-category="Lifestyle"><span class="ico">◇</span><span>Lifestyle<small>Moda, benessere e altro</small></span>›</a></section>
 <section class="products" id="products"><h2 class="section-title">I nostri prodotti in evidenza</h2><div class="filters"><button class="active" data-filter="Tutti">Tutti</button><button data-filter="Animali">Animali</button><button data-filter="Casa">Casa</button><button data-filter="Lifestyle">Lifestyle</button></div>
 <div class="product-grid" id="productGrid">
-<article class="product" data-category="Animali" data-name="comfort pet bed"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=600&q=80" alt="Pet bed"><span class="discount">Demo</span></div><div class="product-info"><h3>Cuccia confortevole per animali</h3><div class="stars">★★★★★ <small>(demo)</small></div><div class="price">€39.99</div><div class="product-actions"><a class="visit" href="#affiliate-note">Vai al rivenditore ↗</a><button class="save" aria-label="Save product">♡</button></div></div></article>
-<article class="product" data-category="Animali" data-name="retractable dog leash"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1551717743-49959800b1f6?auto=format&fit=crop&w=600&q=80" alt="Dog outdoors"><span class="discount">Demo</span></div><div class="product-info"><h3>Guinzaglio retrattile per cani</h3><div class="stars">★★★★★ <small>(demo)</small></div><div class="price">€16.99</div><div class="product-actions"><a class="visit" href="#affiliate-note">Vai al rivenditore ↗</a><button class="save" aria-label="Save product">♡</button></div></div></article>
-<article class="product" data-category="Animali" data-name="stainless steel pet bowl"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=600&q=80" alt="Pet"><span class="discount"> </span></div><div class="product-info"><h3>Ciotola in acciaio inox</h3><div class="stars">★★★★★ <small>(demo)</small></div><div class="price">€12.99</div><div class="product-actions"><a class="visit" href="#affiliate-note">Vai al rivenditore ↗</a><button class="save" aria-label="Save product">♡</button></div></div></article>
-<article class="product" data-category="Animali" data-name="durable dog toy"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=600&q=80" alt="Dog"><span class="discount">Demo</span></div><div class="product-info"><h3>Gioco resistente per cani</h3><div class="stars">★★★★★ <small>(demo)</small></div><div class="price">€7.49</div><div class="product-actions"><a class="visit" href="#affiliate-note">Vai al rivenditore ↗</a><button class="save" aria-label="Save product">♡</button></div></div></article>
-<article class="product" data-category="Animali" data-name="cat tree house"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=600&q=80" alt="Cat"><span class="discount">Demo</span></div><div class="product-info"><h3>Tiragraffi per gatti</h3><div class="stars">★★★★★ <small>(demo)</small></div><div class="price">€59.99</div><div class="product-actions"><a class="visit" href="#affiliate-note">Vai al rivenditore ↗</a><button class="save" aria-label="Save product">♡</button></div></div></article>
-<article class="product" data-category="Casa" data-name="modern living room decor"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Living room"></div><div class="product-info"><h3>Modern Casa Decor</h3><div class="stars">★★★★★ <small>(demo)</small></div><div class="price">€29.90</div><div class="product-actions"><a class="visit" href="#affiliate-note">Vai al rivenditore ↗</a><button class="save" aria-label="Save product">♡</button></div></div></article>
-<article class="product" data-category="Lifestyle" data-name="everyday backpack"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80" alt="Backpack"></div><div class="product-info"><h3>Borsa per tutti i giorni</h3><div class="stars">★★★★★ <small>(demo)</small></div><div class="price">€24.90</div><div class="product-actions"><a class="visit" href="#affiliate-note">Vai al rivenditore ↗</a><button class="save" aria-label="Save product">♡</button></div></div></article>
+<article class="product" data-category="Animali" data-name="cuccia confortevole per animali"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=600&q=80" alt="Cuccia per animali"><span class="discount">Demo</span></div><div class="product-info"><h3>Cuccia confortevole per animali</h3><div class="stars">★★★★★ <small>(demo)</small></div><div class="price">€39.99</div><div class="product-actions"><a class="visit" href="#affiliate-note">Vai al rivenditore ↗</a><button class="save" aria-label="Salva product">♡</button></div></div></article>
+<article class="product" data-category="Animali" data-name="guinzaglio retrattile per cani"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1551717743-49959800b1f6?auto=format&fit=crop&w=600&q=80" alt="Cane all'aperto"><span class="discount">Demo</span></div><div class="product-info"><h3>Guinzaglio retrattile per cani</h3><div class="stars">★★★★★ <small>(demo)</small></div><div class="price">€16.99</div><div class="product-actions"><a class="visit" href="#affiliate-note">Vai al rivenditore ↗</a><button class="save" aria-label="Salva product">♡</button></div></div></article>
+<article class="product" data-category="Animali" data-name="ciotola in acciaio inox"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=600&q=80" alt="Animale domestico"><span class="discount"> </span></div><div class="product-info"><h3>Ciotola in acciaio inox</h3><div class="stars">★★★★★ <small>(demo)</small></div><div class="price">€12.99</div><div class="product-actions"><a class="visit" href="#affiliate-note">Vai al rivenditore ↗</a><button class="save" aria-label="Salva product">♡</button></div></div></article>
+<article class="product" data-category="Animali" data-name="gioco resistente per cani"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1535294435445-d7249524ef2e?auto=format&fit=crop&w=600&q=80" alt="Cane"><span class="discount">Demo</span></div><div class="product-info"><h3>Gioco resistente per cani</h3><div class="stars">★★★★★ <small>(demo)</small></div><div class="price">€7.49</div><div class="product-actions"><a class="visit" href="#affiliate-note">Vai al rivenditore ↗</a><button class="save" aria-label="Salva product">♡</button></div></div></article>
+<article class="product" data-category="Animali" data-name="tiragraffi per gatti"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=600&q=80" alt="Gatto"><span class="discount">Demo</span></div><div class="product-info"><h3>Tiragraffi per gatti</h3><div class="stars">★★★★★ <small>(demo)</small></div><div class="price">€59.99</div><div class="product-actions"><a class="visit" href="#affiliate-note">Vai al rivenditore ↗</a><button class="save" aria-label="Salva product">♡</button></div></div></article>
+<article class="product" data-category="Casa" data-name="arredo moderno per la casa"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Soggiorno"></div><div class="product-info"><h3>Arredo moderno per la casa</h3><div class="stars">★★★★★ <small>(demo)</small></div><div class="price">€29.90</div><div class="product-actions"><a class="visit" href="#affiliate-note">Vai al rivenditore ↗</a><button class="save" aria-label="Salva product">♡</button></div></div></article>
+<article class="product" data-category="Lifestyle" data-name="borsa per tutti i giorni"><div class="product-image"><img loading="lazy" src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=600&q=80" alt="Zaino"></div><div class="product-info"><h3>Borsa per tutti i giorni</h3><div class="stars">★★★★★ <small>(demo)</small></div><div class="price">€24.90</div><div class="product-actions"><a class="visit" href="#affiliate-note">Vai al rivenditore ↗</a><button class="save" aria-label="Salva product">♡</button></div></div></article>
 </div><p class="empty" id="empty">Nessun prodotto trovato. Prova un'altra ricerca.</p></section>
 <section class="benefits"><div><b>🚚</b>Spedizione<small>Si applicano le condizioni del rivenditore</small></div><div><b>🛡</b>Pagamento dal rivenditore<small>Pagamenti gestiti dal rivenditore</small></div><div><b>🎧</b>Contatta AKINI<small>Domande e suggerimenti</small></div><div><b>↻</b>Resi<small>Si applicano le politiche del rivenditore</small></div></section>
 <p class="disclosure" id="affiliate-note"><strong>Informativa sui link affiliati:</strong> AKINI può ricevere una commissione se segui un link affiliato ed effettui un acquisto idoneo, senza costi aggiuntivi. Questa è una versione dimostrativa: nomi, prezzi, valutazioni, sconti e link sono indicativi e dovranno essere sostituiti con informazioni verificate e link affiliati approvati prima della pubblicazione.</p>
 <dialog id="cartDialog" aria-labelledby="cartDialogTitle" style="border:0;border-radius:16px;padding:22px;width:min(92%,440px);box-shadow:0 12px 45px #0004;color:var(--ink)">
-<h2 id="cartDialogTitle">Your AKINI Carrello</h2><div id="cartItems"></div><p id="cartTotal" style="font-weight:800"></p>
+<h2 id="cartDialogTitle">Il tuo carrello AKINI</h2><div id="cartItems"></div><p id="cartTotal" style="font-weight:800"></p>
 <p style="font-size:12px;color:var(--muted)">Questo è solo un elenco di prodotti. AKINI non gestisce pagamenti né ordini. Gli acquisti avvengono sui siti dei rivenditori.</p>
-<button type="button" onclick="closeCarrello()" style="background:var(--navy);color:white;border:0;border-radius:22px;padding:10px 18px">Continua gli acquisti</button>
+<button type="button" onclick="closeCart()" style="background:var(--navy);color:white;border:0;border-radius:22px;padding:10px 18px">Continua gli acquisti</button>
 </dialog>
 <dialog id="wishlistDialog" aria-labelledby="wishlistDialogTitle" style="border:0;border-radius:16px;padding:22px;width:min(92%,440px);box-shadow:0 12px 45px #0004;color:var(--ink)">
-<h2 id="wishlistDialogTitle">Your AKINI Preferiti</h2><div id="wishlistItems"></div>
-<button type="button" onclick="closePreferiti()" style="background:var(--navy);color:white;border:0;border-radius:22px;padding:10px 18px">Chiudi</button>
+<h2 id="wishlistDialogTitle">I tuoi preferiti AKINI</h2><div id="wishlistItems"></div>
+<button type="button" onclick="closeWishlist()" style="background:var(--navy);color:white;border:0;border-radius:22px;padding:10px 18px">Chiudi</button>
 </dialog>
-<footer class="footer" id="footer"><div id="about"><strong style="font-size:25px">AKINI</strong><br>I buy. I choose. I love.<br><small>Animali · Casa · Lifestyle</small></div><div><strong>Esplora</strong><br><small><a href="about.html" style="color:#fff">About</a> · <a href="contact-it.html" style="color:#fff">Contact</a> · <a href="affiliate-disclosure-it.html" style="color:#fff">Informativa affiliazioni</a></small></div><div><strong>Informazioni</strong><br><small><a href="privacy-policy-it.html" style="color:#fff">Privacy Policy</a><br><a href="cookie-policy-it.html" style="color:#fff">Cookie Policy</a><br><a href="terms-it.html" style="color:#fff">Termini e condizioni</a></small></div><div><small>© 2026 AKINI — Anteprima in sviluppo</small></div></footer>
+<footer class="footer" id="footer"><div id="about"><strong style="font-size:25px">AKINI</strong><br>Compro. Scelgo. Amo.<br><small>Animali · Casa · Lifestyle</small></div><div><strong>Esplora</strong><br><small><a href="about-it.html" style="color:#fff">About</a> · <a href="contact-it.html" style="color:#fff">Contact</a> · <a href="affiliate-disclosure-it.html" style="color:#fff">Informativa affiliazioni</a></small></div><div><strong>Informazioni</strong><br><small><a href="privacy-policy-it.html" style="color:#fff">Privacy Policy</a><br><a href="cookie-policy-it.html" style="color:#fff">Cookie Policy</a><br><a href="terms-it.html" style="color:#fff">Termini e condizioni</a></small></div><div><small>© 2026 AKINI — Anteprima di sviluppo</small></div></footer>
 <script>
-const cards = [...document.querySelectorTutti('.product')];
-const filterButtons = [...document.querySelectorTutti('[data-filter]')];
+const cards = [...document.querySelectorAll('.product')];
+const filterButtons = [...document.querySelectorAll('[data-filter]')];
 const searchInput = document.getElementById('searchInput');
 const empty = document.getElementById('empty');
 const cartDialog = document.getElementById('cartDialog');
@@ -71,18 +71,18 @@ function readStore(key, fallback) {
     return Array.isArray(value) ? value : fallback;
   } catch (_) { return fallback; }
 }
-let cart = readStore('akiniCarrello', []).filter(item =>
+let cart = readStore('akiniCart', []).filter(item =>
   item && typeof item.name === 'string' && Number.isInteger(item.qty) && item.qty > 0
 );
-let wishlist = readStore('akiniPreferiti', []).filter(name => typeof name === 'string');
+let wishlist = readStore('akiniWishlist', []).filter(name => typeof name === 'string');
 
 function saveStore(key, value) {
   try { localStorage.setItem(key, JSON.stringify(value)); }
-  catch (_) { showMessage('Your browser could not save this list. Check your storage settings.'); }
+  catch (_) { showMessage('Il browser non può salvare questo elenco. Controlla le impostazioni di archiviazione.'); }
 }
-function updateCarrelloCount() {
+function updateCartCount() {
   document.getElementById('cartCount').textContent = cart.reduce((n, item) => n + item.qty, 0);
-  saveStore('akiniCarrello', cart);
+  saveStore('akiniCart', cart);
 }
 function updateProducts() {
   const q = searchInput.value.trim().toLowerCase();
@@ -101,10 +101,10 @@ function setFilter(value) {
   updateProducts();
 }
 filterButtons.forEach(btn => btn.addEventListener('click', () => setFilter(btn.dataset.filter)));
-document.querySelectorTutti('.category[data-category]').forEach(link =>
+document.querySelectorAll('.category[data-category]').forEach(link =>
   link.addEventListener('click', () => setFilter(link.dataset.category))
 );
-document.querySelectorTutti('.nav a[data-category]').forEach(link =>
+document.querySelectorAll('.nav a[data-category]').forEach(link =>
   link.addEventListener('click', () => {
     setFilter(link.dataset.category);
     document.getElementById('products').scrollIntoView();
@@ -123,24 +123,24 @@ searchInput.addEventListener('input', updateProducts);
 cards.forEach(card => {
   const name = card.querySelector('h3').textContent.trim();
   const button = document.createElement('button');
-  button.type = 'button'; button.className = 'add-cart'; button.textContent = '+ Add to Carrello';
+  button.type = 'button'; button.className = 'add-cart'; button.textContent = '+ Aggiungi al carrello';
   button.addEventListener('click', () => {
     const found = cart.find(item => item.name === name);
     if (found) found.qty++;
     else cart.push({name, qty: 1});
-    updateCarrelloCount(); button.textContent = '✓ Added';
-    setTimeout(() => button.textContent = '+ Add to Carrello', 1000);
+    updateCartCount(); button.textContent = '✓ Aggiunto';
+    setTimeout(() => button.textContent = '+ Aggiungi al carrello', 1000);
   });
   card.querySelector('.product-actions').prepend(button);
   const saveButton = card.querySelector('.save');
   saveButton.addEventListener('click', () => {
     if (wishlist.includes(name)) wishlist = wishlist.filter(item => item !== name);
     else wishlist.push(name);
-    saveStore('akiniPreferiti', wishlist);
-    updatePreferitiButtons();
+    saveStore('akiniWishlist', wishlist);
+    updateWishlistButtons();
   });
 });
-function updatePreferitiButtons() {
+function updateWishlistButtons() {
   cards.forEach(card => {
     const name = card.querySelector('h3').textContent.trim();
     const button = card.querySelector('.save');
@@ -148,13 +148,13 @@ function updatePreferitiButtons() {
     button.classList.toggle('saved', saved);
     button.textContent = saved ? '♥' : '♡';
     button.setAttribute('aria-pressed', String(saved));
-    button.setAttribute('aria-label', (saved ? 'Remove ' : 'Save ') + name + ' ' + (saved ? 'from' : 'to') + ' wishlist');
+    button.setAttribute('aria-label', (saved ? 'Rimuovi ' : 'Salva ') + name + ' ' + (saved ? 'from' : 'to') + ' wishlist');
   });
 }
-function showPreferiti() {
+function showWishlist() {
   wishlistItems.replaceChildren();
   if (!wishlist.length) {
-    const p = document.createElement('p'); p.textContent = 'Your wishlist is empty. Tap a heart to save a product.';
+    const p = document.createElement('p'); p.textContent = 'La lista dei preferiti è vuota. Tocca un cuore per salvare un prodotto.';
     wishlistItems.append(p);
   } else {
     wishlist.forEach(name => {
@@ -182,10 +182,10 @@ function showPreferiti() {
   if (wishlistDialog.showModal) wishlistDialog.showModal();
   else alert(wishlistItems.textContent);
 }
-function openCarrello() {
+function openCart() {
   cartItems.replaceChildren();
   if (!cart.length) {
-    cartItems.textContent = 'Your cart is empty.'; cartTotal.textContent = '';
+    cartItems.textContent = 'Il carrello è vuoto.'; cartTotal.textContent = '';
   } else {
     cart.forEach((item, index) => {
       const row = document.createElement('div');
@@ -210,12 +210,12 @@ function openCarrello() {
       const controls = document.createElement('div');
       controls.style.cssText = 'display:flex;align-items:center;gap:10px';
       const minus = document.createElement('button');
-      minus.type = 'button'; minus.textContent = '−'; minus.setAttribute('aria-label', 'Decrease ' + item.name);
+      minus.type = 'button'; minus.textContent = '−'; minus.setAttribute('aria-label', 'Diminuisci ' + item.name);
       minus.addEventListener('click', () => changeQty(index, -1));
       const quantity = document.createElement('span');
       quantity.textContent = 'Qtà: ' + item.qty;
       const plus = document.createElement('button');
-      plus.type = 'button'; plus.textContent = '+'; plus.setAttribute('aria-label', 'Increase ' + item.name);
+      plus.type = 'button'; plus.textContent = '+'; plus.setAttribute('aria-label', 'Aumenta ' + item.name);
       plus.addEventListener('click', () => changeQty(index, 1));
       controls.append(minus, quantity, plus);
       details.append(label, controls);
@@ -231,10 +231,10 @@ function changeQty(index, amount) {
   if (!cart[index]) return;
   cart[index].qty += amount;
   if (cart[index].qty <= 0) cart.splice(index, 1);
-  updateCarrelloCount(); openCarrello();
+  updateCartCount(); openCart();
 }
-function closeCarrello() { cartDialog.close(); }
-function closePreferiti() { wishlistDialog.close(); }
+function closeCart() { cartDialog.close(); }
+function closeWishlist() { wishlistDialog.close(); }
 function showMessage(message) { alert(message); }
 function toggleMobileMenu(button) {
   const nav = document.getElementById('siteNav');
@@ -243,8 +243,8 @@ function toggleMobileMenu(button) {
   button.textContent = isOpen ? '✕ Chiudi Menu' : '☰ Menu';
 }
 document.getElementById('lang').addEventListener('change', e => { window.location.href = e.target.value === 'en' ? 'index.html' : 'index-it.html'; });
-updateCarrelloCount();
-updatePreferitiButtons();
+updateCartCount();
+updateWishlistButtons();
 updateProducts();
 </script>
 </body></html>
