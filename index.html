@@ -242,12 +242,7 @@ function toggleMobileMenu(button) {
   button.setAttribute('aria-expanded', String(isOpen));
   button.textContent = isOpen ? '✕ Close Menu' : '☰ Menu';
 }
-document.getElementById('lang').addEventListener('change', e => {
-  if (e.target.value === 'it') {
-    showMessage('La traduzione italiana completa non è ancora disponibile. La aggiungeremo dopo il collaudo delle funzioni.');
-    e.target.value = 'en';
-  }
-});
+document.getElementById('lang').addEventListener('change', e => { window.location.href = e.target.value === 'it' ? 'index-it.html' : 'index.html'; });
 updateCartCount();
 updateWishlistButtons();
 updateProducts();
