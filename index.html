@@ -187,16 +187,38 @@ function openCart() {
     cartItems.textContent = 'Your cart is empty.'; cartTotal.textContent = '';
   } else {
     cart.forEach((item, index) => {
-      const row = document.createElement('p');
-      const label = document.createElement('span');
-      label.textContent = (index + 1) + '. ' + item.name + ' — Qty: ' + item.qty + ' ';
+      const row = document.createElement('div');
+      row.style.cssText = 'display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #e5e7eb';
+      const card = cards.find(product => product.querySelector('h3').textContent.trim() === item.name);
+      if (card) {
+        const sourceImage = card.querySelector('.product-image img');
+        if (sourceImage) {
+          const img = document.createElement('img');
+          img.src = sourceImage.currentSrc || sourceImage.src;
+          img.alt = sourceImage.alt || item.name;
+          img.loading = 'lazy';
+          img.style.cssText = 'width:76px;height:76px;object-fit:cover;border-radius:10px;flex:0 0 76px';
+          row.append(img);
+        }
+      }
+      const details = document.createElement('div');
+      details.style.cssText = 'display:flex;flex:1;min-width:0;flex-direction:column;gap:8px';
+      const label = document.createElement('strong');
+      label.textContent = item.name;
+      label.style.cssText = 'overflow-wrap:anywhere';
+      const controls = document.createElement('div');
+      controls.style.cssText = 'display:flex;align-items:center;gap:10px';
       const minus = document.createElement('button');
       minus.type = 'button'; minus.textContent = '−'; minus.setAttribute('aria-label', 'Decrease ' + item.name);
       minus.addEventListener('click', () => changeQty(index, -1));
+      const quantity = document.createElement('span');
+      quantity.textContent = 'Qty: ' + item.qty;
       const plus = document.createElement('button');
       plus.type = 'button'; plus.textContent = '+'; plus.setAttribute('aria-label', 'Increase ' + item.name);
       plus.addEventListener('click', () => changeQty(index, 1));
-      row.append(label, minus, document.createTextNode(' '), plus);
+      controls.append(minus, quantity, plus);
+      details.append(label, controls);
+      row.append(details);
       cartItems.append(row);
     });
     cartTotal.textContent = 'Total products: ' + cart.reduce((n, item) => n + item.qty, 0);
