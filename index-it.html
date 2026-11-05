@@ -155,7 +155,7 @@ function updateWishlistButtons() {
     button.classList.toggle('saved', saved);
     button.textContent = saved ? '♥' : '♡';
     button.setAttribute('aria-pressed', String(saved));
-    button.setAttribute('aria-label', (saved ? 'Rimuovi ' : 'Salva ') + name + ' ' + (saved ? 'from' : 'to') + ' wishlist');
+    button.setAttribute('aria-label', (saved ? 'Rimuovi ' : 'Salva ') + name + ' ' + (saved ? 'dalla' : 'alla') + ' lista dei preferiti');
   });
 }
 function showWishlist() {
