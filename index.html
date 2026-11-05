@@ -27,7 +27,7 @@
 <form class="search" id="searchForm"><input id="searchInput" placeholder="Search for pets, home & lifestyle products..." aria-label="Search products"><button aria-label="Search">⌕</button></form>
 <div class="header-actions"><button type="button" onclick="showWishlist()"><b>♡</b>Wishlist</button><button type="button" onclick="openCart()"><b>🛒</b>Cart (<span id="cartCount">0</span>)</button></div></header>
 <button class="mobile-menu-toggle" type="button" aria-controls="siteNav" aria-expanded="false" onclick="toggleMobileMenu(this)">☰ Menu</button>
-<nav class="nav" id="siteNav"><a href="#">⌂ Home</a><a href="#categories">🐾 Pets⌄</a><a href="#categories">⌂ Home⌄</a><a href="#categories">✿ Lifestyle⌄</a><a href="#products">◆ Deals</a><a href="about.html">ⓘ About Us</a><a href="#footer">✉ Contact</a></nav>
+<nav class="nav" id="siteNav"><a href="#">⌂ Home</a><a href="#products" data-category="Pets">🐾 Pets⌄</a><a href="#products" data-category="Home">⌂ Home⌄</a><a href="#products" data-category="Lifestyle">✿ Lifestyle⌄</a><a href="#products">◆ Deals</a><a href="about.html">ⓘ About Us</a><a href="#footer">✉ Contact</a></nav>
 <section class="hero"><div class="hero-copy"><div class="hero-logo">A<span>KINI</span></div><div class="tagline">I buy. I choose. I love.</div><h1>Everything for your<br><em>Pets, Home</em> and Lifestyle!</h1><a class="cta" href="#products">Shop Now →</a></div><aside class="hero-aside"><strong>Happy Pets,<br>Happier You!</strong><p><span>✔</span> Explore useful finds<br><span>✔</span> Compare retailer options<br><span>✔</span> Shop directly with retailers</p></aside></section>
 <section class="categories" id="categories"><a class="category" href="#products" data-category="Pets"><span class="ico">🐾</span><span>Pets<small>Food, Toys, Accessories</small></span>›</a><a class="category" href="#products" data-category="Home"><span class="ico">⌂</span><span>Home<small>Decor, Kitchen, Living</small></span>›</a><a class="category" href="#products" data-category="Lifestyle"><span class="ico">◇</span><span>Lifestyle<small>Fashion, Wellness & More</small></span>›</a></section>
 <section class="products" id="products"><h2 class="section-title">Our Featured Products</h2><div class="filters"><button class="active" data-filter="All">All</button><button data-filter="Pets">Pets</button><button data-filter="Home">Home</button><button data-filter="Lifestyle">Lifestyle</button></div>
@@ -102,6 +102,17 @@ function setFilter(value) {
 filterButtons.forEach(btn => btn.addEventListener('click', () => setFilter(btn.dataset.filter)));
 document.querySelectorAll('.category[data-category]').forEach(link =>
   link.addEventListener('click', () => setFilter(link.dataset.category))
+);
+document.querySelectorAll('.nav a[data-category]').forEach(link =>
+  link.addEventListener('click', () => {
+    setFilter(link.dataset.category);
+    document.getElementById('products').scrollIntoView();
+    const nav = document.getElementById('siteNav');
+    const toggle = document.querySelector('.mobile-menu-toggle');
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.textContent = '☰ Menu';
+  })
 );
 document.getElementById('searchForm').addEventListener('submit', e => {
   e.preventDefault(); updateProducts(); document.getElementById('products').scrollIntoView();
