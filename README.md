@@ -24,3 +24,8 @@ Published with GitHub Pages from the `main` branch.
 5. Verify the live site on mobile and desktop after each release.
 
 This repository does not establish that AKINI is a registered business or that any affiliate programme has approved it.
+
+## Search Console
+
+- Google Search Console HTML ownership verification tag is installed in the `<head>` of `index.html`.
+- Complete ownership verification only after the latest GitHub Pages deployment is published, then submit `sitemap.xml`.
